@@ -40,4 +40,3 @@ def consigner(diag: Diagnostic, accord: bool, responsable: str,
               "responsable": responsable, "instant": instant}
     carnet.append(entree)
     return entree
-    
