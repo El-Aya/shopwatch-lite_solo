@@ -7,9 +7,11 @@ _SECRETS = re.compile(
     re.IGNORECASE,
 )
 
+_BEARER = re.compile(r"(Bearer\s+)[^\s]+", re.IGNORECASE)
 
 def masquer_donnees(texte: str) -> str:
-    return _SECRETS.sub(r"\1\2[MASQUE]", texte)
+    texte = _SECRETS.sub(r"\1\2[MASQUE]", texte)
+    return _BEARER.sub(r"\1[MASQUE]", texte)
 
 
 def lire_journal(ligne: str, numero: int, origine: str = "PAIEMENT",

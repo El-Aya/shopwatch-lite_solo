@@ -33,6 +33,9 @@ class TestExtraction(unittest.TestCase):
         self.assertEqual(sig.categorie, "BUILD_ECHEC")
         self.assertEqual(sig.gravite, "MAJEUR")
 
+    def test_bearer(self):
+        self.assertEqual(masquer_donnees("Authorization: Bearer eyJ.abc-1"),
+                         "Authorization: Bearer [MASQUE]")
 
 if __name__ == "__main__":
     unittest.main()
