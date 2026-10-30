@@ -32,7 +32,7 @@ class TestExtraction(unittest.TestCase):
                           "date": "2026-11-27T17:08:00Z"}, 7)
         self.assertEqual(sig.categorie, "BUILD_ECHEC")
         self.assertEqual(sig.gravite, "MAJEUR")
-        
+
     def test_bearer(self):
         self.assertEqual(masquer_donnees("Authorization: Bearer eyJ.abc-1"),
                          "Authorization: Bearer [MASQUE]")
